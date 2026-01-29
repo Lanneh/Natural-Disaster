@@ -185,15 +185,3 @@ const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-```
-
-### **File 3: .gitignore**
-```
-node_modules/
-.env
-```
-
-### **File 4: .env**
-```
-MONGODB_URI=your_mongodb_connection_string_here
-PORT=10000
