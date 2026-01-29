@@ -16,11 +16,3 @@
     "node": ">=18.0.0"
   }
 }
-```
-
-**server.js:** (copy the full server code from my earlier message)
-
-**.gitignore:**
-```
-node_modules/
-.env
