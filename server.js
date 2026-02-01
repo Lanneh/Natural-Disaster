@@ -30,7 +30,9 @@ const mapSchema = new mongoose.Schema({
   metadata: {
     difficulty: String,
     estimatedPlayTime: Number,
-    tags: [String]
+    tags: [String],
+    partCount: { type: Number, default: 0 },
+    modelCount: { type: Number, default: 0 }
   },
   moderation: {
     ownerRating: { type: String, default: null },
