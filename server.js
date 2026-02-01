@@ -19,6 +19,7 @@ const mapSchema = new mongoose.Schema({
   creatorUsername: String,
   description: String,
   dataStoreKey: String,
+  thumbnail: { type: Number, default: 0 },
   stats: {
     plays: { type: Number, default: 0 },
     likes: { type: Number, default: 0 },
