@@ -26,10 +26,10 @@ app.get('/', (req, res) => {
   });
 });
 
-// Routes
+// Routes - MAKE SURE THIS LINE EXISTS
 app.use('/api/maps', require('./routes/maps'));
 app.use('/api/rating', require('./routes/rating'));
-app.use('/api/featuring', require('./routes/featuring'));
+app.use('/api/featuring', require('./routes/featuring'));  // ← THIS LINE
 app.use('/api/stats', require('./routes/stats'));
 
 // Error handling middleware
