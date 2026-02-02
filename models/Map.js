@@ -29,11 +29,11 @@ const mapSchema = new mongoose.Schema({
   moderation: {
     ownerRating: { 
       type: String, 
-      enum: [null, 'Rated', 'Epic', 'Legendary', 'Mythic'], 
-      default: null 
+      enum: ["None", 'Rated', 'Epic', 'Legendary', 'Mythic'], 
+      default: "None" 
     },
-    featuredPosition: { type: Number, default: null },
-    ratedDate: { type: Date, default: null },
+    featuredPosition: { type: Number, default: "-1" },
+    ratedDate: { type: Date, default: 0 },
     moderatorNotes: { type: String, default: '' },
     reportCount: { type: Number, default: 0 },
     isPublic: { type: Boolean, default: true }
@@ -42,7 +42,7 @@ const mapSchema = new mongoose.Schema({
   timestamps: {
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
-    lastPlayedAt: { type: Date, default: null }
+    lastPlayedAt: { type: Date, default: Data.now }
   },
   
   version: { type: Number, default: 1 }
@@ -54,5 +54,6 @@ mapSchema.index({ 'moderation.isPublic': 1, 'stats.plays': -1 });
 mapSchema.index({ 'moderation.isPublic': 1, 'moderation.ownerRating': 1 });
 mapSchema.index({ 'moderation.featuredPosition': 1 });
 mapSchema.index({ mapName: 'text', creatorUsername: 'text', description: 'text' });
+
 
 module.exports = mongoose.model('Map', mapSchema);
