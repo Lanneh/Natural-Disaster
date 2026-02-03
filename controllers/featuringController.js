@@ -82,7 +82,7 @@ exports.unfeatureMap = async (req, res, next) => {
 exports.getFeaturedList = async (req, res, next) => {
   try {
     const maps = await Map.find({
-      'moderation.featuredPosition': { $ne: null },
+      'moderation.featuredPosition': { $gt: 0 },
       'moderation.isPublic': true
     })
     .sort({ 'moderation.featuredPosition': 1 })
